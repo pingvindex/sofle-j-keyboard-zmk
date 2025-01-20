@@ -42,13 +42,14 @@
             acceleration-exponent = <2>;      // 0.5 (adjust to your preference)
             time-to-max-speed-ms = <100>;     // 500 (adjust to your preference)
             delay-ms = <2>;                   //   10
+            #binding-cells = <1>;
         };
     };
 
     scroll_encoder: scroll_encoder {
         compatible = "zmk,behavior-sensor-rotate";
-        #sensor-binding-cells = <0>;
-        bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+        #sensor-binding-cells = <1>;
+        bindings = <&msc 1 SCRL_UP>, <&msc 1 SCRL_DOWN>;
 
         tap-ms = <30>;
     };
