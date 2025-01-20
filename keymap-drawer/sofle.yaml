@@ -27,7 +27,7 @@ layers:
   - O
   - P
   - {t: \, s: '|'}
-  - '&hm CAPS'
+  - $$mdi:apple-keyboard-shift$$
   - A
   - S
   - D
@@ -54,10 +54,10 @@ layers:
   - {t: /, s: '?'}
   - {t: '=', s: +}
   - $$mdi:volume-off$$
+  - $$mdi:apple-keyboard-caps$$
   - $$mdi:apple-keyboard-option$$
   - $$mdi:apple-keyboard-control$$
-  - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-shift$$'}
-  - $$mdi:apple-keyboard-command$$
+  - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-command$$'}
   - {t: '$$mdi:keyboard-return$$', h: RAISE}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:backspace$$', h: '$$mdi:navigation-variant$$'}
@@ -176,7 +176,7 @@ layers:
   - $$mdi:progress-download$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
+  - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:backup-restore$$', type: bootloader}
