@@ -1,6 +1,6 @@
 layout: {qmk_keyboard: sofle/rev1}
 layers:
-  LAYER0:
+  BASE:
   - {t: '`', s: '~'}
   - {t: '1', s: '!'}
   - {t: '2', s: '@'}
@@ -152,9 +152,9 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - PG UP
-  - '&HOME'
+  - HOME
   - $$mdi:arrow-up-bold$$
-  - '&END'
+  - END
   - {t: '$$mdi:transfer$$', type: trans}
   - '&soft_off'
   - {t: '$$mdi:backup-restore$$', type: bootloader}
@@ -190,8 +190,8 @@ layers:
   - $$mdi:mouse-left-click-outline$$
   - {type: held}
   - $$mdi:mouse-left-click-outline$$
-  - '&RCMD'
-  - '&RSHFT'
-  - '&RCTRL'
-  - '&RALT'
+  - $$mdi:apple-keyboard-command$$
+  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-option$$
   - {t: '$$mdi:transfer$$', type: trans}
