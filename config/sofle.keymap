@@ -6,6 +6,8 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 
+#undef ZMK_MOUSE_DEFAULT_MOVE_VAL
+#undef ZMK_MOUSE_DEFAULT_SCRL_VAL
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 300
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 25    // 5
 
@@ -62,7 +64,7 @@
 &kp TAB         &kp Q      &kp W         &kp E         &kp R        &kp T        &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp LBKT
 &kp LSHFT       &kp A      &kp S         &kp D         &kp F        &kp G        &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L            &kp SEMI    &kp APOS
 &kp LALT        &kp Z      &kp X         &kp C         &kp V        &kp B        &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT          &kp FSLH    &kp RBKT
-&kp C_MUTE      &kp PLUS     &kp EQUAL   &hm LCTRL ESC  &hm LCMD SPACE     &ltq 2 ENTER  &kp LS(ENTER)    &kp BACKSPACE    &ltq 1 SPACE  &hm RSHIFT CAPS &kp UNDER  &kp MINUS
+&kp C_MUTE      &kp PLUS     &kp EQUAL   &hm LCTRL ESC  &hm LCMD SPACE     &ltq 2 ENTER   &kp LS(ENTER)    &kp BACKSPACE    &ltq 1 SPACE  &hm RSHIFT CAPS &kp UNDER  &kp MINUS
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -84,10 +86,10 @@
 
         layer_2 {
             bindings = <
-&trans         &bt BT_SEL 0              &bt BT_SEL 1           &bt BT_SEL 2        &bt BT_SEL 3        &bt BT_SEL 4             &mmv MOVE_UP        &trans     &trans       &trans           &trans      &trans      &trans
-&trans         &bt BT_CLR                &bt BT_CLR_ALL         &out OUT_USB        &out OUT_BLE        &trans                   &mmv MOVE_DOWN      &kp PG_UP     &HOME        &kp UP           &END      &trans      &soft_off
-&sys_reset     &rgb_ug RGB_OFF           &rgb_ug RGB_ON         &rgb_ug RGB_EFF     &rgb_ug RGB_EFR     &rgb_ug RGB_SPI          &mmv MOVE_LEFT      &kp PG_DN     &kp LEFT     &kp DOWN         &kp RIGHT   &trans      &sys_reset
-&bootloader    &rgb_ug RGB_BRI           &rgb_ug RGB_BRD        &trans              &trans              &trans                   &mmv MOVE_RIGHT     &trans     &trans       &trans           &trans      &trans      &bootloader
+&trans         &bt BT_SEL 0              &bt BT_SEL 1           &bt BT_SEL 2        &bt BT_SEL 3        &bt BT_SEL 4             &mmv MOVE_UP        &trans        &trans       &trans           &trans      &trans      &trans
+&trans         &bt BT_CLR                &bt BT_CLR_ALL         &out OUT_USB        &out OUT_BLE        &trans                   &mmv MOVE_DOWN      &kp PG_UP     &HOME        &kp UP_ARROW           &END        &trans      &soft_off
+&sys_reset     &rgb_ug RGB_OFF           &rgb_ug RGB_ON         &rgb_ug RGB_EFF     &rgb_ug RGB_EFR     &rgb_ug RGB_SPI          &mmv MOVE_LEFT      &kp PG_DN     &kp LEFT_ARROW     &kp DOWN_ARROW         &kp RIGHT_ARROW   &trans      &sys_reset
+&bootloader    &rgb_ug RGB_BRI           &rgb_ug RGB_BRD        &trans              &trans              &trans                   &mmv MOVE_RIGHT     &trans        &trans       &trans           &trans      &trans      &bootloader
 &trans         &trans                    &mkp MCLK              &mkp RCLK           &mkp LCLK           &trans                   &mkp LCLK           &RCMD      &RSHFT       &RCTRL           &RALT       &trans
             >;
 
