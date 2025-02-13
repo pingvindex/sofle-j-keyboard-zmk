@@ -87,7 +87,7 @@
         layer_2 {
             bindings = <
 &trans         &bt BT_SEL 0              &bt BT_SEL 1           &bt BT_SEL 2        &bt BT_SEL 3        &bt BT_SEL 4             &mmv MOVE_UP        &trans        &trans       &trans           &trans      &trans      &trans
-&trans         &bt BT_CLR                &bt BT_CLR_ALL         &out OUT_USB   &out OUT_BLE        &trans                   &mmv MOVE_DOWN      &kp PG_UP     &HOME        &kp UP_ARROW           &END        &trans      &soft_off
+&trans         &bt BT_CLR                &bt BT_CLR_ALL         &out OUT_USB   &out OUT_BLE        &trans                   &mmv MOVE_DOWN      &kp PG_UP     &kp HOME        &kp UP_ARROW           &kp END        &trans      &soft_off
 &sys_reset     &rgb_ug RGB_OFF           &rgb_ug RGB_ON         &rgb_ug RGB_EFF     &rgb_ug RGB_EFR     &rgb_ug RGB_SPI          &mmv MOVE_LEFT      &kp PG_DN     &kp LEFT_ARROW     &kp DOWN_ARROW         &kp RIGHT_ARROW   &trans      &sys_reset
 &bootloader    &rgb_ug RGB_BRI           &rgb_ug RGB_BRD        &trans              &trans              &trans                   &mmv MOVE_RIGHT     &trans        &trans       &trans           &trans      &trans      &bootloader
 &trans         &trans                    &mkp MCLK              &mkp RCLK           &mkp LCLK           &trans                   &mkp LCLK           &RCMD      &RSHFT       &RCTRL           &RALT       &trans
