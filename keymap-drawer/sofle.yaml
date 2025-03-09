@@ -1,4 +1,4 @@
-layout: {qmk_keyboard: sofle/rev1}
+layout: {zmk_keyboard: sofle}
 layers:
   BASE:
   - {t: '`', s: '~'}
@@ -27,7 +27,7 @@ layers:
   - O
   - P
   - {t: '[', s: '{'}
-  - $$mdi:apple-keyboard-shift$$
+  - {t: '$$mdi:backspace$$', h: '$$mdi:apple-keyboard-shift$$'}
   - A
   - S
   - D
@@ -60,7 +60,7 @@ layers:
   - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-command$$'}
   - {t: '$$mdi:keyboard-return$$', h: RAISE}
   - {t: 'Sft+$$mdi:keyboard-return$$', type: enter}
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: '$$mdi:backspace$$', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: '$$mdi:keyboard-space$$', h: LOWER}
   - {t: '$$mdi:apple-keyboard-caps$$', h: '$$mdi:apple-keyboard-shift$$'}
   - _
@@ -88,8 +88,8 @@ layers:
   - $$mdi:arrow-down-bold$$
   - '!'
   - '@'
-  - '#'
-  - $
+  - {t: '[', s: '{'}
+  - {t: ']', s: '}'}
   - '%'
   - {t: \, s: '|'}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -109,13 +109,13 @@ layers:
   - '|'
   - +
   - {t: '=', s: +}
-  - '{'
-  - '}'
-  - $$mdi:arrow-right-bold$$
-  - {t: '[', s: '{'}
-  - {t: ']', s: '}'}
   - _
   - {t: '-', s: _}
+  - $$mdi:arrow-right-bold$$
+  - '#'
+  - $
+  - '{'
+  - '}'
   - {t: /, s: '?'}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:volume-off$$
