@@ -1,13 +1,15 @@
 #include <behaviors/mouse_keys.dtsi>
+#include <dt-bindings/zmk/mouse.h>
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/mouse.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
 #undef ZMK_MOUSE_DEFAULT_MOVE_VAL
 #undef ZMK_MOUSE_DEFAULT_SCRL_VAL
+
 #define ZMK_MOUSE_DEFAULT_MOVE_VAL 1200  // 300
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 25    // 5
 
@@ -60,11 +62,11 @@
 
         layer_0 {
             bindings = <
-&kp GRAVE       &kp N1     &kp N2        &kp N3        &kp N4       &kp N5       &kp UP_ARROW     &kp N6     &kp N7     &kp N8     &kp N9           &kp N0      &kp BSLH
-&kp TAB         &kp Q      &kp W         &kp E         &kp R        &kp T        &kp DOWN_ARROW   &kp Y      &kp U      &kp I      &kp O            &kp P       &kp LBKT
-&kp LSHFT       &kp A      &kp S         &kp D         &kp F        &kp G        &kp LEFT_ARROW   &kp H      &kp J      &kp K      &kp L            &kp SEMI    &kp APOS
-&kp LALT        &kp Z      &kp X         &kp C         &kp V        &kp B        &kp RIGHT_ARROW  &kp N      &kp M      &kp COMMA  &kp DOT          &kp FSLH    &kp RBKT
-&kp C_MUTE      &kp PLUS     &kp EQUAL   &hm LCTRL ESC  &hm LCMD SPACE     &ltq 2 ENTER   &kp LS(ENTER)    &kp BACKSPACE    &ltq 1 SPACE  &hm RSHIFT CAPS &kp UNDER  &kp MINUS
+&kp GRAVE            &kp N1    &kp N2     &kp N3         &kp N4          &kp N5          &kp UP_ARROW     &kp N6               &kp N7        &kp N8           &kp N9     &kp N0     &kp BSLH
+&kp TAB              &kp Q     &kp W      &kp E          &kp R           &kp T           &kp DOWN_ARROW   &kp Y                &kp U         &kp I            &kp O      &kp P      &kp LBKT
+&hm LSHFT BACKSPACE  &kp A     &kp S      &kp D          &kp F           &kp G           &kp LEFT_ARROW   &kp H                &kp J         &kp K            &kp L      &kp SEMI   &kp APOS
+&kp LALT             &kp Z     &kp X      &kp C          &kp V           &kp B           &kp RIGHT_ARROW  &kp N                &kp M         &kp COMMA        &kp DOT    &kp FSLH   &kp RBKT
+&kp C_MUTE           &kp PLUS  &kp EQUAL  &hm LCTRL ESC  &hm LCMD SPACE  &ltq 2 ENTER    &kp LS(ENTER)    &hm RSHFT BACKSPACE  &ltq 1 SPACE  &hm RSHIFT CAPS  &kp UNDER  &kp MINUS
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
@@ -73,11 +75,11 @@
 
         layer_1 {
             bindings = <
-&kp F12     &kp F1           &kp F2          &kp F3           &kp F4           &kp F5           &kp UP_ARROW         &kp F6           &kp F7           &kp F8      &kp F9     &kp F10           &kp F11
-&kp GRAVE   &kp N1           &kp N2          &kp N3           &kp N4           &kp N5           &kp DOWN_ARROW       &kp EXCL         &kp AT           &kp HASH    &kp DLLR   &kp PRCNT         &kp BSLH
-&trans      &kp N6           &kp N7          &kp N8           &kp N9           &kp N0           &kp LEFT_ARROW       &kp CARET        &kp AMPS         &kp LPAR    &kp RPAR  &kp STAR           &kp APOS
-&trans      &kp PIPE         &kp PLUS        &kp EQUAL        &kp LBRC         &kp RBRC         &kp RIGHT_ARROW      &kp LBKT         &kp RBKT         &kp UNDER    &kp MINUS     &kp FSLH      &trans
-&kp C_MUTE  &trans           &trans          &kp LCTRL           &kp LCMD           &kp ENTER           &kp LS(ENTER)        &trans           &trans           &trans      &trans     &trans
+&kp F12     &kp F1    &kp F2    &kp F3     &kp F4     &kp F5       &kp UP_ARROW     &kp F6     &kp F7      &kp F8          &kp F9             &kp F10    &kp F11
+&kp GRAVE   &kp N1    &kp N2    &kp N3     &kp N4     &kp N5       &kp DOWN_ARROW   &kp EXCL   &kp AT      &kp LBKT        &kp RIGHT_BRACKET  &kp PRCNT  &kp BSLH
+&trans      &kp N6    &kp N7    &kp N8     &kp N9     &kp N0       &kp LEFT_ARROW   &kp CARET  &kp AMPS    &kp LPAR        &kp RPAR           &kp STAR   &kp APOS
+&trans      &kp PIPE  &kp PLUS  &kp EQUAL  &kp UNDER  &kp MINUS    &kp RIGHT_ARROW  &kp HASH   &kp DOLLAR  &kp LEFT_BRACE  &kp RIGHT_BRACE    &kp FSLH   &trans
+&kp C_MUTE  &trans    &trans    &kp LCTRL  &kp LCMD   &kp ENTER    &kp LS(ENTER)    &trans     &trans      &trans          &trans             &trans
             >;
 
             display-name = "LOWER";
@@ -86,11 +88,11 @@
 
         layer_2 {
             bindings = <
-&trans         &bt BT_SEL 0              &bt BT_SEL 1           &bt BT_SEL 2        &bt BT_SEL 3        &bt BT_SEL 4             &mmv MOVE_UP        &trans        &trans       &trans           &trans            &trans      &trans
-&trans         &bt BT_CLR                &bt BT_CLR_ALL         &out OUT_USB        &out OUT_BLE        &trans                   &mmv MOVE_DOWN      &kp PG_UP     &kp HOME     &kp UP           &kp END           &trans      &soft_off
-&sys_reset     &rgb_ug RGB_OFF           &rgb_ug RGB_ON         &rgb_ug RGB_EFF     &rgb_ug RGB_EFR     &rgb_ug RGB_SPI          &mmv MOVE_LEFT      &kp PG_DN     &kp LEFT     &kp DOWN         &kp RIGHT_ARROW   &trans      &sys_reset
-&bootloader    &rgb_ug RGB_BRI           &rgb_ug RGB_BRD        &trans              &trans              &trans                   &mmv MOVE_RIGHT     &trans        &trans       &trans           &trans            &trans      &bootloader
-&trans         &trans                    &mkp MCLK              &mkp RCLK           &mkp LCLK           &trans                   &mkp LCLK           &kp RCMD      &kp RSHFT       &kp RCTRL           &kp RALT       &trans
+&trans       &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4       &mmv MOVE_UP     &trans     &trans     &trans     &trans           &trans  &trans
+&trans       &bt BT_CLR       &bt BT_CLR_ALL   &out OUT_USB     &out OUT_BLE     &trans             &mmv MOVE_DOWN   &kp PG_UP  &kp HOME   &kp UP     &kp END          &trans  &soft_off
+&sys_reset   &rgb_ug RGB_OFF  &rgb_ug RGB_ON   &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI    &mmv MOVE_LEFT   &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT_ARROW  &trans  &sys_reset
+&bootloader  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &trans           &trans           &trans             &mmv MOVE_RIGHT  &trans     &trans     &trans     &trans           &trans  &bootloader
+&trans       &trans           &mkp MCLK        &mkp RCLK        &mkp LCLK        &trans             &mkp LCLK        &kp RCMD   &kp RSHFT  &kp RCTRL  &kp RALT         &trans
             >;
 
             display-name = "RAISE";
