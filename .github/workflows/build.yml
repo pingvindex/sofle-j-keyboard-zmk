@@ -1,4 +1,5 @@
-name: Build ZMK firmware
+name: Build ZMK Firmware
+
 on:
   workflow_dispatch:
   push:
@@ -7,20 +8,67 @@ on:
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    name: Build ZMK Firmware
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Full history for upstream sync
+
+      - name: Set Up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
+      - name: Install Dependencies
+        run: |
+          pip install --user west
+          west init -l config
+          west update
+          west zephyr-export
+
+      - name: Clean Previous Builds
+        run: west build -t clean || true
+
+      - name: Build Firmware
+        uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+
   draw:
-    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    name: Generate Keymap Image
+    runs-on: ubuntu-latest
     permissions:
-      contents: write
-    with:
-      commit_message: "[Draw] ${{ github.event.head_commit.message }}"
-      amend_commit: false
-      install_branch: "main"
-      keymap_patterns: "config/*.keymap"
-      json_path: "config"
-      config_path: "keymap_drawer.config.yaml" # config file, ignored if not exists
-      output_folder: "keymap-drawer"
-      destination: "both"
-      parse_args: ""  # map of extra args to pass to `keymap parse`, e.g. "corne:'-l Def Lwr Rse' cradio:''"
-      draw_args: ""   # map of extra args to pass to `keymap draw`, e.g. "corne:'-k corne_rotated' cradio:'-k paroxysm'"
+      contents: write # Required to commit the generated images
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Draw Keymap
+        uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+        with:
+          commit_message: "[Draw] ${{ github.event.head_commit.message }}"
+          amend_commit: false
+          install_branch: "main"
+          keymap_patterns: "config/*.keymap"
+          json_path: "config"
+          config_path: "keymap_drawer.config.yaml"
+          output_folder: "keymap-drawer"
+          destination: "both"
+          parse_args: ""
+          draw_args: ""
+
+      - name: Verify Keymap Output
+        run: |
+          if [ ! -d "keymap-drawer" ]; then
+            echo "Keymap output folder missing!"
+            exit 1
+          fi
+
+      - name: Commit and Push Keymap Images
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "github-actions@github.com"
+          git add keymap-drawer/*
+          git commit -m "[Auto] Update keymap images" || exit 0
+          git push
 
