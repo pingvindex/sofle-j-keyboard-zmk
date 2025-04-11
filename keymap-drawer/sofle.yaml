@@ -1,20 +1,20 @@
 layout: {zmk_keyboard: sofle}
 layers:
   BASE:
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-caps$$
+  - {t: '1', s: '!'}
+  - {t: '2', s: '@'}
+  - {t: '3', s: '#'}
+  - {t: '4', s: $}
+  - {t: '5', s: '%'}
   - $$mdi:arrow-up-bold$$
+  - {t: '6', s: ^}
+  - {t: '7', s: '&'}
+  - {t: '8', s: '*'}
+  - {t: '9', s: (}
+  - {t: '0', s: )}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - $$mdi:keyboard-esc$$
   - Q
   - W
   - E
@@ -27,7 +27,7 @@ layers:
   - O
   - P
   - {t: '[', s: '{'}
-  - {t: '$$mdi:apple-keyboard-caps$$', h: '$$mdi:apple-keyboard-shift$$'}
+  - $$mdi:keyboard-tab$$
   - A
   - S
   - D
@@ -40,7 +40,7 @@ layers:
   - L
   - {t: ;, s: ':'}
   - .
-  - {t: '$$mdi:backspace$$', h: '$$mdi:apple-keyboard-option$$'}
+  - $$mdi:apple-keyboard-shift$$
   - Z
   - X
   - C
@@ -54,17 +54,17 @@ layers:
   - {t: /, s: '?'}
   - {t: ']', s: '}'}
   - $$mdi:volume-off$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:keyboard-esc$$', h: '$$mdi:apple-keyboard-control$$'}
-  - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-command$$'}
-  - {t: '$$mdi:keyboard-return$$', h: LOWER}
-  - {t: 'Sft+$$mdi:keyboard-return$$', type: enter}
-  - {t: '$$mdi:backspace$$', h: RAISE}
+  - $$mdi:apple-keyboard-option$$
+  - $$mdi:apple-keyboard-control$$
+  - LGUI
   - {t: '$$mdi:keyboard-space$$', h: LOWER}
-  - {t: '$$mdi:keyboard-tab$$', h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:keyboard-return$$', h: '$$mdi:apple-keyboard-command$$'}
+  - {t: 'Sft+$$mdi:keyboard-return$$', type: enter}
+  - {t: '$$mdi:backspace$$', h: '$$mdi:apple-keyboard-control$$'}
+  - {t: LOWER, h: LOWER}
+  - RGUI
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-option$$
   LOWER:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -83,8 +83,8 @@ layers:
   - {t: '1', s: '!'}
   - {t: '2', s: '@'}
   - {t: '3', s: '#'}
-  - {t: '4', s: $}
-  - {t: '5', s: '%'}
+  - +
+  - {t: '=', s: +}
   - $$mdi:arrow-down-bold$$
   - '!'
   - '@'
@@ -92,24 +92,24 @@ layers:
   - {t: ']', s: '}'}
   - '%'
   - {t: \, s: '|'}
-  - $$mdi:apple-keyboard-shift$$
+  - '~'
+  - {t: '4', s: $}
+  - {t: '5', s: '%'}
   - {t: '6', s: ^}
-  - {t: '7', s: '&'}
-  - {t: '8', s: '*'}
-  - {t: '9', s: (}
-  - {t: '0', s: )}
+  - {t: '-', s: _}
+  - _
   - $$mdi:arrow-left-bold$$
   - ^
   - '&'
   - (
   - )
   - '*'
-  - ':'
-  - $$mdi:apple-keyboard-option$$
   - '|'
-  - +
-  - {t: '=', s: +}
-  - _
+  - $$mdi:apple-keyboard-shift$$
+  - {t: '7', s: '&'}
+  - {t: '8', s: '*'}
+  - {t: '9', s: (}
+  - {t: '0', s: )}
   - {t: '-', s: _}
   - $$mdi:arrow-right-bold$$
   - '#'
@@ -117,19 +117,19 @@ layers:
   - '{'
   - '}'
   - {t: /, s: '?'}
-  - {t: ;, s: ':'}
+  - $$mdi:apple-keyboard-shift$$
   - $$mdi:volume-off$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-option$$
   - $$mdi:apple-keyboard-control$$
-  - $$mdi:apple-keyboard-command$$
-  - {type: held}
+  - LGUI
+  - {t: BASE, h: toggle, type: held}
+  - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: 'Sft+$$mdi:keyboard-return$$', type: enter}
-  - '3'
-  - {type: held alternate}
-  - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: RAISE, h: toggle}
+  - RGUI
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-option$$
   RAISE:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -149,7 +149,7 @@ layers:
   - F2
   - F3
   - F4
-  - $$mdi:apple-keyboard-caps$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - PG UP
   - HOME
@@ -157,12 +157,12 @@ layers:
   - END
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:keyboard-tab$$
   - F5
   - F6
   - F7
   - F8
-  - $$mdi:apple-keyboard-shift$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - PG DN
   - $$mdi:arrow-left-bold$$
@@ -170,31 +170,31 @@ layers:
   - $$mdi:arrow-right-bold$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-shift$$
   - F9
   - F10
   - F11
   - F12
-  - $$mdi:apple-keyboard-control$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
-  - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - MUTE
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-shift$$
+  - {t: '3', h: toggle}
+  - $$mdi:apple-keyboard-option$$
   - $$mdi:apple-keyboard-control$$
   - LGUI
-  - '3'
+  - {t: BASE, h: toggle}
+  - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:mouse-left-click-outline$$
-  - {t: '$$mdi:backspace$$', type: held}
-  - $$mdi:keyboard-space$$
-  - $$mdi:keyboard-tab$$
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: RAISE, h: toggle}
+  - RGUI
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-option$$
   '3':
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -202,7 +202,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
+  - $$mdi:arrow-up-bold$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -215,7 +215,7 @@ layers:
   - {h: '3', s: '$$mdi:bluetooth-connect$$'}
   - {h: '4', s: '$$mdi:bluetooth-connect$$'}
   - {h: '5', s: '$$mdi:bluetooth-connect$$'}
-  - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
+  - $$mdi:arrow-down-bold$$
   - $$mdi:pan-up$$
   - '&mkp MB1'
   - {t: '$$mdi:menu-up$$', s: '$$mdi:mouse$$'}
@@ -228,7 +228,7 @@ layers:
   - OUT USB
   - OUT BLE
   - $$mdi:progress-download$$
-  - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
+  - $$mdi:arrow-left-bold$$
   - $$mdi:pan-down$$
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
@@ -241,7 +241,7 @@ layers:
   - RGB EFF
   - RGB EFR
   - RGB SPI
-  - {t: '$$mdi:menu-right$$', s: '$$mdi:mouse$$'}
+  - $$mdi:arrow-right-bold$$
   - $$mdi:pan-left$$
   - $$mdi:pan-right$$
   - $$mdi:volume-low$$
@@ -250,13 +250,13 @@ layers:
   - $$mdi:progress-download$$
   - $$mdi:volume-off$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - '&mkp MB3'
+  - '&mkp MB2'
+  - {t: BASE, h: toggle}
+  - '&mkp MB1'
+  - {t: 'Sft+$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {type: held}
-  - $$mdi:mouse-left-click-outline$$
-  - {t: '$$mdi:minus-circle-outline$$', type: held}
-  - {t: '$$mdi:minus-circle-outline$$', type: held}
+  - {t: RAISE, h: toggle}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
