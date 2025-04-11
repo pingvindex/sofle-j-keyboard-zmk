@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: sofle}
 layers:
   BASE:
-  - $$mdi:apple-keyboard-caps$$
+  - $$mdi:keyboard-esc$$
   - {t: '1', s: '!'}
   - {t: '2', s: '@'}
   - {t: '3', s: '#'}
@@ -13,8 +13,8 @@ layers:
   - {t: '8', s: '*'}
   - {t: '9', s: (}
   - {t: '0', s: )}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - $$mdi:keyboard-esc$$
+  - '&BSLH'
+  - $$mdi:keyboard-tab$$
   - Q
   - W
   - E
@@ -27,7 +27,7 @@ layers:
   - O
   - P
   - {t: '[', s: '{'}
-  - $$mdi:keyboard-tab$$
+  - {t: '$$mdi:backspace$$', type: backspace}
   - A
   - S
   - D
@@ -40,7 +40,7 @@ layers:
   - L
   - {t: ;, s: ':'}
   - .
-  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:apple-keyboard-caps$$
   - Z
   - X
   - C
@@ -58,9 +58,9 @@ layers:
   - $$mdi:apple-keyboard-control$$
   - LGUI
   - {t: '$$mdi:keyboard-space$$', h: LOWER}
-  - {t: '$$mdi:keyboard-return$$', h: '$$mdi:apple-keyboard-command$$'}
+  - {t: '$$mdi:keyboard-return$$', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: 'Sft+$$mdi:keyboard-return$$', type: enter}
-  - {t: '$$mdi:backspace$$', h: '$$mdi:apple-keyboard-control$$'}
+  - {t: '$$mdi:backspace$$', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: LOWER, h: LOWER}
   - RGUI
   - $$mdi:apple-keyboard-control$$
@@ -105,7 +105,7 @@ layers:
   - )
   - '*'
   - '|'
-  - $$mdi:apple-keyboard-shift$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '7', s: '&'}
   - {t: '8', s: '*'}
   - {t: '9', s: (}
@@ -117,15 +117,15 @@ layers:
   - '{'
   - '}'
   - {t: /, s: '?'}
-  - $$mdi:apple-keyboard-shift$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:volume-off$$
   - $$mdi:apple-keyboard-option$$
   - $$mdi:apple-keyboard-control$$
   - LGUI
   - {t: BASE, h: toggle, type: held}
-  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {t: '$$mdi:keyboard-return$$', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: 'Sft+$$mdi:keyboard-return$$', type: enter}
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: '$$mdi:backspace$$', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: RAISE, h: toggle, type: held alternate}
   - RGUI
   - $$mdi:apple-keyboard-control$$
@@ -188,9 +188,9 @@ layers:
   - $$mdi:apple-keyboard-control$$
   - LGUI
   - {t: BASE, h: toggle}
-  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {t: '$$mdi:keyboard-return$$', h: '$$mdi:apple-keyboard-shift$$'}
   - $$mdi:mouse-left-click-outline$$
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: '$$mdi:backspace$$', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: RAISE, h: toggle}
   - RGUI
   - $$mdi:apple-keyboard-control$$
