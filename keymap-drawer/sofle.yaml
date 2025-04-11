@@ -61,7 +61,7 @@ layers:
   - {t: '$$mdi:keyboard-return$$', h: '$$mdi:apple-keyboard-command$$'}
   - {t: 'Sft+$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:backspace$$', h: '$$mdi:apple-keyboard-control$$'}
-  - {t: LOWER, h: toggle}
+  - {t: LOWER, h: LOWER}
   - RGUI
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-option$$
@@ -126,7 +126,7 @@ layers:
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: 'Sft+$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:backspace$$', type: backspace}
-  - {t: RAISE, h: toggle}
+  - {t: RAISE, h: toggle, type: held alternate}
   - RGUI
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-option$$
