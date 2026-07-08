@@ -39,6 +39,43 @@
             hold-while-undecided;
         };
 
+        // Timeless Home Row Mods - Left hand
+        // Triggers on: right side keys + same-hand mod keys (for GUI+ALT combos etc.)
+        // Sofle matrix (14 cols, col 6 = encoder gap):
+        //   left half  cols 0-5  -> positions 0-5,13-18,26-31,39-44,52-57
+        //   right half cols 7-13 -> positions 6-12,19-25,32-38,45-51,58-63
+        //   left home-row mods: S(28) D(29) F(30); left shifts: 26, 57
+        hm_l: homerow_mods_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_LEFT";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <6 7 8 9 10 11 12 19 20 21 22 23 24 25 26 28 29 30 32 33 34 35 36 37 38 45 46 47 48 49 50 51 57 58 59 60 61 62 63>;
+        };
+
+        // Timeless Home Row Mods - Right hand
+        // Triggers on: left side keys + same-hand mod keys (for GUI+ALT combos etc.)
+        //   right home-row mods: J(34) K(35) L(36); right shift: 59
+        hm_r: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_RIGHT";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <0 1 2 3 4 5 13 14 15 16 17 18 26 27 28 29 30 31 34 35 36 39 40 41 42 43 44 52 53 54 55 56 57 59>;
+        };
+
         lth: lth {
             compatible = "zmk,behavior-hold-tap";
             label = "LTH";
@@ -78,7 +115,7 @@
             bindings = <
 &kp GRAVE            &kp N1    &kp N2     &kp N3    &kp N4     &kp N5             &kp UP_ARROW     &kp N6               &kp N7       &kp N8     &kp N9     &kp N0         &kp MINUS
 &kp ESCAPE           &kp Q     &kp W      &kp E     &kp R      &kp T              &kp DOWN_ARROW   &kp Y                &kp U        &kp I      &kp O      &kp P          &kp BACKSLASH
-&mt LSHFT BACKSPACE  &kp A     &kp S      &kp D     &kp F      &kp G              &kp LEFT_ARROW   &kp H                &kp J        &kp K      &kp L      &kp SEMICOLON  &kp APOS
+&mt LSHFT BACKSPACE  &kp A  &hm_l LCTRL S  &hm_l LALT D  &hm_l LGUI F  &kp G  &kp LEFT_ARROW  &kp H  &hm_r RGUI J  &hm_r RALT K  &hm_r RCTRL L  &kp SEMICOLON  &kp APOS
 &kp ENTER            &kp Z     &kp X      &kp C     &kp V      &kp B              &kp RIGHT_ARROW  &kp N                &kp M        &kp COMMA  &kp DOT    &kp FSLH       &kp EQUAL
 &kp C_MUTE           &kp LALT  &kp LCTRL  &kp LGUI  &lt 2 TAB  &mt LSHFT SPACE    &kp LS(ENTER)    &mt RSHFT BACKSPACE  &lt 1 ENTER  &kp RCMD   &kp RCTRL  &mt RALT CAPS
             >;
