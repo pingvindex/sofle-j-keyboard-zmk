@@ -7,7 +7,10 @@ on:
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    # Pinned to match the ZMK revision in config/west.yml (petejohanson
+    # feat/pointers-move-scroll, 2024-08, HWMv1). Using @main pulls in newer
+    # build scripts + Zephyr SDK that no longer understand this config.
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3.0
   draw:
     uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
     permissions:
