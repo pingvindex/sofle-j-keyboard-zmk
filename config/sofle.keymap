@@ -2,7 +2,7 @@
 // otherwise the header's #ifndef defaults win and cpp emits -Wmacro-redefined.
 // (On modern ZMK these are ZMK_POINTING_DEFAULT_MOVE_VAL / _SCRL_VAL.)
 
-#define ZMK_MOUSE_DEFAULT_MOVE_VAL 1600  // default: 600  -> max cursor velocity
+#define ZMK_MOUSE_DEFAULT_MOVE_VAL 900  // default: 600  -> max cursor velocity
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 20    // default: 10   -> max scroll velocity
 
 #include <behaviors/mouse_keys.dtsi>
@@ -29,8 +29,8 @@
         // so a big time-to-max-speed-ms makes short presses crawl.
 
         mmv {
-            acceleration-exponent = <1>;      // 1 = linear ramp; raise for fine control at low speed
-            time-to-max-speed-ms = <100>;     // was 900 (ZMK default: 300)
+            acceleration-exponent = <2>;      // 1 = linear ramp; raise for fine control at low speed
+            time-to-max-speed-ms = <300>;     // was 900 (ZMK default: 300)
             delay-ms = <0>;                   // 0
         };
 
